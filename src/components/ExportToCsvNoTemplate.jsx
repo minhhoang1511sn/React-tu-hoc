@@ -81,10 +81,16 @@ const ExportWithDynamicColumns = ({ data }) => {
 
       // Ghi tên tháng (hàng 1)
       worksheet.getRow(headerMonthRow).getCell(currentCol).value = month;
-
+      //căn giữa ô merge
+      worksheet.getRow(headerMonthRow).getCell(currentCol).alignment = {
+        vertical: 'middle',
+        horizontal: 'center'
+      };
       // Ghi sub-headers (hàng 2)
       subs.forEach((sub, idx) => {
         worksheet.getRow(headerSubRow).getCell(currentCol + idx).value = sub;
+        //fit content row 2
+        worksheet.getColumn(currentCol + idx).width = sub.length + 2;
       });
 
       // Merge tên tháng
