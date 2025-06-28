@@ -1,6 +1,7 @@
 import React from 'react';
 import ExportWithTemplate from './components/ExportToCsv';
 import ExportWithTemplate2 from './components/ExportToCsvNoTemplate';
+import ExportWithDynamicColumns from './components/ExportCSVNoMergge';
 /**
  * ExportCsvButton Component
  * A reusable button to export data to a CSV file using vanilla JavaScript.
@@ -116,7 +117,8 @@ function App() {
 
   return (
     // <ExportWithTemplate data={sampleData}/>
-    <ExportWithTemplate2 data={sampleData}/>
+    // <ExportWithTemplate2 data={sampleData}/>
+    <ExportWithDynamicColumns data={sampleData}/>
   );
 }
 
